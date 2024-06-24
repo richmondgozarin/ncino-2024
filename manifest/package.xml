@@ -8,6 +8,7 @@
         <members>*</members>
         <name>ApexComponent</name>
     </types>
+    
     <types>
         <members>*</members>
         <name>ApexPage</name>
@@ -15,6 +16,10 @@
     <types>
         <members>*</members>
         <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
     </types>
     <types>
         <members>*</members>

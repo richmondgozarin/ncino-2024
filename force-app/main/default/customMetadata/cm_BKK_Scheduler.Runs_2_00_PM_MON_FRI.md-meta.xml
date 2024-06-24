@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Runs 2:00 PM MON-FRI</label>
+    <protected>false</protected>
+    <values>
+        <field>CM_Batch_Name__c</field>
+        <value xsi:type="xsd:string">cm_BookingBatch-2PM</value>
+    </values>
+    <values>
+        <field>Cron_Expression__c</field>
+        <value xsi:type="xsd:string">0 0 14 ? * MON-FRI</value>
+    </values>
+    <values>
+        <field>cm_Batch_Order__c</field>
+        <value xsi:type="xsd:string">BO-03</value>
+    </values>
+    <values>
+        <field>cm_Description__c</field>
+        <value xsi:type="xsd:string">This will run the BKK batch 2:00 PM Mon-Fri</value>
+    </values>
+    <values>
+        <field>isActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

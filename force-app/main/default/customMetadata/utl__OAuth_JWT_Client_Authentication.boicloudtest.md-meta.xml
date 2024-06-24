@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>boicloudtest</label>
+    <protected>false</protected>
+    <values>
+        <field>utl__Additional_Token_Endpoint_Headers__c</field>
+        <value xsi:type="xsd:string">x-api-transaction-id:1234567,x-api-correlation-id:1234567</value>
+    </values>
+    <values>
+        <field>utl__Auth_Provider_Name__c</field>
+        <value xsi:type="xsd:string">boicloudtest</value>
+    </values>
+    <values>
+        <field>utl__Custom_Callback_URL__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>utl__JWT_Algorithm__c</field>
+        <value xsi:type="xsd:string">RS256</value>
+    </values>
+    <values>
+        <field>utl__JWT_Audience__c</field>
+        <value xsi:type="xsd:string">https://sit.apis.boicloudtest.net</value>
+    </values>
+    <values>
+        <field>utl__JWT_Issuer__c</field>
+        <value xsi:type="xsd:string">20b0fbbbc767432a8e71fc139246c07f</value>
+    </values>
+    <values>
+        <field>utl__JWT_Kid__c</field>
+        <value xsi:type="xsd:string">64a09c09-3715-47a5-af71-520de9a10f7c64a09c09-3715-47a5-af71-520de9a10f7c</value>
+    </values>
+    <values>
+        <field>utl__JWT_Signing_Algorithm__c</field>
+        <value xsi:type="xsd:string">RSA-SHA256</value>
+    </values>
+    <values>
+        <field>utl__JWT_Signing_Certificate_Name__c</field>
+        <value xsi:type="xsd:string">ncino_mulesoft_test</value>
+    </values>
+    <values>
+        <field>utl__JWT_Subject__c</field>
+        <value xsi:type="xsd:string">20b0fbbbc767432a8e71fc139246c07f</value>
+    </values>
+    <values>
+        <field>utl__Scope__c</field>
+        <value xsi:type="xsd:string">nCino</value>
+    </values>
+    <values>
+        <field>utl__Token_Endpoint_URL__c</field>
+        <value xsi:type="xsd:string">https://sit.apis.boicloudtest.net/trusted-partners/e/oauth2/v2.0/access-token</value>
+    </values>
+</CustomMetadata>

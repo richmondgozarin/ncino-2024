@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Decision Approve</label>
+    <protected>false</protected>
+    <values>
+        <field>SEL_Body__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;decisionResult&quot;: {
+    &quot;accountOrigination&quot;: {
+      &quot;primaryApplicant&quot;: {
+        &quot;customerDetails&quot;: {
+          &quot;general&quot;: {
+            
+          },
+          &quot;risk&quot;: {
+            &quot;gradeControlCode&quot;: &quot;&quot;,
+            &quot;totalGroupExposureAmount&quot;: 10000.0,
+            &quot;creditRating7InternalAndControlCode&quot;: &quot;3N&quot;
+          }
+        },
+        &quot;personDetails&quot;: {
+          &quot;financials&quot;: {
+            &quot;netDisposableIncome&quot;: 0.0
+          }
+        },
+        &quot;applicantAccountDetails&quot;: {
+          &quot;account&quot;: {
+            &quot;behaviour&quot;: {
+              &quot;minimumBalanceOverLast3Months&quot;: 0.0,
+              &quot;minimumBalanceOverLast6Months&quot;: 0.0,
+              &quot;irregularNumberOfDaysInLast12months&quot;: 0,
+              &quot;irregularNumberOfDaysInLast6months&quot;: 0,
+              &quot;numberOfDaysPaymentPostponedInLast6Months&quot;: 0,
+              &quot;numberOfReversalsUnpaidsPaymentsInLast12months&quot;: 0,
+              &quot;numberOfReversalsUnpaidsPaymentsInLast6months&quot;: 0,
+              &quot;noOfDaysInDebitInLast6Months&quot;: 0,
+              &quot;averageLedgerBalanceProbeMTD&quot;: 0.0,
+              &quot;3MRollingAverageCreditTurnover&quot;: 0.0,
+              &quot;6MRollingAverageCreditTurnover&quot;: 0.0,
+              &quot;12MRollingAverageCreditTurnover&quot;: 0.0
+            },
+            &quot;limit&quot;: {
+              &quot;timeSinceLimitChange&quot;: 0
+            },
+            &quot;monetaryAmount&quot;: {
+              &quot;clearedBalance&quot;: 0.0,
+              &quot;totalCreditTurnoverCurrentMonth&quot;: 0.0
+            },
+            &quot;risk&quot;: {
+              &quot;exposureAtDefaultFactor&quot;: 0.1,
+              &quot;lossGivenDefaultFactor&quot;: 0.65,
+              &quot;pointInTimeProbabilityOfDefaultPool&quot;: 9,
+              &quot;pointInTimeProbabilityOfDefaultScore&quot;: 584,
+              &quot;pointInTimeProbabilityOfDefaultScorecardID&quot;: 1,
+              &quot;pointInTimeProbabilityOfDefaultSubPool&quot;: 0.0,
+              &quot;probabilityOfDefault&quot;: 0.027,
+              &quot;creditRating7Internal&quot;: 0
+            },
+            &quot;servicing&quot;: {
+              
+            }
+          },
+          &quot;currentAccount&quot;: {
+            &quot;general&quot;: {
+              
+            },
+            &quot;limit&quot;: {
+              
+            }
+          }
+        }
+      },
+      &quot;assessment&quot;: {
+        &quot;finalDecisionCode&quot;: &quot;Accept&quot;,
+        &quot;decisionOutcome&quot;: &quot;Accept&quot;,
+        &quot;decisionOutcomeTable&quot;: &quot;Accept Accept AC01&quot;,
+        &quot;reasonCode&quot;: &quot;AC01&quot;,
+        &quot;decisionRulesID&quot;: &quot;45:14&quot;,
+        &quot;netDisposableIncome&quot;: 0.0,
+        &quot;netDisposableIncomeasPercentageOfMonthlyIncome&quot;: 0.0,
+        &quot;bureauRatingIndicator&quot;: &quot;N&quot;,
+        &quot;overdraftRepaymentAmount&quot;: 0.0,
+        &quot;customerOverdraftLimit&quot;: 0.0
+      },
+      &quot;credit&quot;: {
+        &quot;preApprovalBlockedIndicator&quot;: &quot;&quot;
+      },
+      &quot;identifier&quot;: {
+        &quot;scorecardIdentifier&quot;: 11
+      },
+      &quot;risk&quot;: {
+        &quot;creditRiskScore&quot;: 496,
+        &quot;applicationExposureAtDefaultAmount&quot;: 10000.0,
+        &quot;applicationExpectedLossAmount&quot;: 496,
+        &quot;applicationLossGivenDefault&quot;: 0.0,
+        &quot;modellingStrategy&quot;: &quot;R&quot;,
+        &quot;baselRiskScore&quot;: 496
+      }
+    }
+  }
+}</value>
+    </values>
+    <values>
+        <field>SEL_Header__c</field>
+        <value xsi:type="xsd:string">{&quot;Content-Type&quot;:&quot;application/json&quot; ,&quot;Key&quot;:&quot;Value&quot; ,&quot;Connection&quot;: &quot;Keep-Alive&quot; }</value>
+    </values>
+    <values>
+        <field>SEL_StatusCode__c</field>
+        <value xsi:type="xsd:double">200.0</value>
+    </values>
+    <values>
+        <field>SEL_Status__c</field>
+        <value xsi:type="xsd:string">Success</value>
+    </values>
+</CustomMetadata>

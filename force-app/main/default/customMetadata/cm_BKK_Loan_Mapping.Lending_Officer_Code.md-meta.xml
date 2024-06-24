@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Lending Officer Code</label>
+    <protected>false</protected>
+    <values>
+        <field>cm_Child_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Child_Object__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Date_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Default_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Is_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>cm_Is_Padding__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>cm_Is_Sole_Trader__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>cm_Order__c</field>
+        <value xsi:type="xsd:string">CM-034</value>
+    </values>
+    <values>
+        <field>cm_Padding_Count__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>cm_Padding_Direction__c</field>
+        <value xsi:type="xsd:string">Right</value>
+    </values>
+    <values>
+        <field>cm_Padding_Value__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Parent_Field__c</field>
+        <value xsi:type="xsd:string">cm_TotalSMEExposure__c</value>
+    </values>
+    <values>
+        <field>cm_Parent_Object__c</field>
+        <value xsi:type="xsd:string">LLC_BI__Account__r</value>
+    </values>
+    <values>
+        <field>cm_Source_Field__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>cm_Source_Object__c</field>
+        <value xsi:type="xsd:string">LLC_BI__Loan__c</value>
+    </values>
+    <values>
+        <field>cm_Target_Column__c</field>
+        <value xsi:type="xsd:string">LEND_OFCR_CDE</value>
+    </values>
+    <values>
+        <field>cm_Target_Csv_File__c</field>
+        <value xsi:type="xsd:string">Loan Account</value>
+    </values>
+</CustomMetadata>

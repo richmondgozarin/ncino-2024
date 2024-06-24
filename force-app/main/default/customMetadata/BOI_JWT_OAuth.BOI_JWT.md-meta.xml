@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BOI JWT</label>
+    <protected>false</protected>
+    <values>
+        <field>Client_ID__c</field>
+        <value xsi:type="xsd:string">20b0fbbbc767432a8e71fc139246c07f</value>
+    </values>
+    <values>
+        <field>Host__c</field>
+        <value xsi:type="xsd:string">https://sit.apis.boicloudtest.net</value>
+    </values>
+    <values>
+        <field>JWT_Algorithm__c</field>
+        <value xsi:type="xsd:string">RS256</value>
+    </values>
+    <values>
+        <field>JWT_Audience__c</field>
+        <value xsi:type="xsd:string">https://sit.apis.boicloudtest.net</value>
+    </values>
+    <values>
+        <field>JWT_Issuer__c</field>
+        <value xsi:type="xsd:string">20b0fbbbc767432a8e71fc139246c07f</value>
+    </values>
+    <values>
+        <field>JWT_Kid__c</field>
+        <value xsi:type="xsd:string">64a09c09-3715-47a5-af71-520de9a10f7c</value>
+    </values>
+    <values>
+        <field>JWT_Signing_Algorithm__c</field>
+        <value xsi:type="xsd:string">RSA-SHA256</value>
+    </values>
+    <values>
+        <field>JWT_Signing_Certificate_Name__c</field>
+        <value xsi:type="xsd:string">ncino_mulesoft_test</value>
+    </values>
+    <values>
+        <field>JWT_Subject__c</field>
+        <value xsi:type="xsd:string">20b0fbbbc767432a8e71fc139246c07f</value>
+    </values>
+    <values>
+        <field>Scope__c</field>
+        <value xsi:type="xsd:string">nCino</value>
+    </values>
+    <values>
+        <field>Token_Endpoint_URL__c</field>
+        <value xsi:type="xsd:string">/trusted-partners/e/oauth2/v2.0/access-token</value>
+    </values>
+    <values>
+        <field>cm_IsMockingEnabled__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

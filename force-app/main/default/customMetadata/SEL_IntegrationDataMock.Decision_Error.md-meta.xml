@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Decision Error</label>
+    <protected>false</protected>
+    <values>
+        <field>SEL_Body__c</field>
+        <value xsi:type="xsd:string">{
+&quot;api&quot;: &quot;ERS Risk Assessment Experience API&quot;,
+&quot;uri&quot;: &quot;/trusted-partners/e/ers-risk-assessment/v1/account-orignation/product-types/loan/identifier/300034260/assess-risk&quot;,
+&quot;timestamp&quot;: &quot;2024-05-02T08:57:23.742Z&quot;,
+&quot;code&quot;: &quot;ERA_PARKP_019&quot;,
+&quot;type&quot;: &quot;ERROR&quot;,
+&quot;summary&quot;: &quot;Server Bad Request&quot;,
+&quot;additionalInformation&quot;: {
+&quot;type&quot;: &quot;Error&quot;,
+&quot;details&quot;: {
+&quot;api&quot;: &quot;ERS Risk Assessment System API&quot;,
+&quot;uri&quot;: &quot;/internal/s/ers-risk-assessment/v1/account-orignation/product-types/loan/identifier/300034260/assess-risk&quot;,
+&quot;timestamp&quot;: &quot;2024-05-02T09:57:23.715+01:00&quot;,
+&quot;code&quot;: &quot;ERA_PARKP_109&quot;,
+&quot;type&quot;: &quot;ERROR&quot;,
+&quot;summary&quot;: &quot;Processing Error&quot;,
+&quot;additionalInformation&quot;: {
+&quot;type&quot;: &quot;Text&quot;,
+&quot;details&quot;: &quot;/accountOrigination extraneous key [affordability] is not permitted&quot;
+}
+}
+}
+}</value>
+    </values>
+    <values>
+        <field>SEL_Header__c</field>
+        <value xsi:type="xsd:string">{&quot;Content-Type&quot;:&quot;application/json&quot; ,&quot;Key&quot;:&quot;Value&quot; ,&quot;Connection&quot;: &quot;Keep-Alive&quot; }</value>
+    </values>
+    <values>
+        <field>SEL_StatusCode__c</field>
+        <value xsi:type="xsd:double">500.0</value>
+    </values>
+    <values>
+        <field>SEL_Status__c</field>
+        <value xsi:type="xsd:string">Internal Server Error</value>
+    </values>
+</CustomMetadata>
