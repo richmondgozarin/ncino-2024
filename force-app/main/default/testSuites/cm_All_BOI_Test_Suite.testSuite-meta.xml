@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>cm_AWSServiceTest</testClassName>
+    <testClassName>cm_BookingBatchSchedulerControllerTest</testClassName>
+    <testClassName>cm_BookingBatchSchedulerTest</testClassName>
+    <testClassName>cm_BookingBatchTest</testClassName>
+    <testClassName>CM_CreditActionRequestTest</testClassName>
+    <testClassName>CM_ERS_API_CalloutTest</testClassName>
+    <testClassName>cm_ExceptionLogTest</testClassName>
+    <testClassName>CM_JwtAuthProvidorTest</testClassName>
+    <testClassName>cm_MonthlyStatementAfterSaveFlowTest</testClassName>
+    <testClassName>cm_ShermanTest</testClassName>
+    <testClassName>cm_ShermanTestClone</testClassName>
+    <testClassName>cm_TestDataFactory</testClassName>
+    <testClassName>cm_UtilitiesTest</testClassName>
+    <testClassName>FinancialUtilsTest</testClassName>
+    <testClassName>SEL_CoreConstants_TEST</testClassName>
+    <testClassName>SEL_IntegrationsSelector_TEST</testClassName>
+    <testClassName>SEL_IntegrationsTransformService_TEST</testClassName>
+    <testClassName>TestClassTypeProvider</testClassName>
+</ApexTestSuite>

@@ -1,0 +1,55 @@
+:host {
+--slds-c-button-spacing-block-end: 1rem;
+--slds-c-button-spacing-block-start: 1rem;
+--slds-c-button-spacing-inline-end: 1rem;
+--slds-c-button-spacing-inline-start: 1rem;
+}
+
+.container1 {
+    background-color: #DCDCDC;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.containerHeaderSmallLine {
+    background-color: #010158;
+		height: 5px;
+}
+.containerHeader {
+    background-color: #ebe9e9ed;
+		height: 50px;
+}
+.container2 {
+    margin: 40px;
+    padding: 20px;
+		background-color: #FFFFFF;
+		position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+h1 {
+		text-align: left;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.agree {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.submit {
+    text-align: center;
+}

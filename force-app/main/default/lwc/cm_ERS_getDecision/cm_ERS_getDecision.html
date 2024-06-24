@@ -1,0 +1,81 @@
+<template>
+  <lightning-modal-header label="Get Decision"></lightning-modal-header>
+  <lightning-modal-body>
+    <template if:true={showSpinner}>
+      <div class="spinnerCenter">
+        <lightning-spinner
+          alternative-text="Loading"
+          size="medium"
+        ></lightning-spinner>
+      </div>
+    </template>
+    <template if:true={isLoanValidated}>
+      <div class="contentCenter">
+        <div class="slds-var-p-around_small">
+          <strong> ERS Decision Outcome: {resultObj.ersStatus}</strong>
+        </div>
+        <div class="slds-var-p-around_small">
+          <template if:true={isApprove}>
+            <lightning-icon
+              icon-name="action:approval"
+              alternative-text="Approved"
+              title="Approved"
+            ></lightning-icon>
+          </template>
+          <template if:true={isDecline}>
+            <lightning-icon
+              icon-name="action:close"
+              alternative-text="close"
+              title="close"
+            ></lightning-icon>
+          </template>
+          <template if:true={isRefer}>
+            <lightning-icon
+              icon-name="action:submit_for_approval"
+              alternative-text="submit_for_approval"
+              title="submit_for_approval"
+            ></lightning-icon>
+          </template>
+        </div>
+      </div>
+    </template>
+
+    <template if:true={resultObj.hasError}>
+      <!--Use to show single error Message -->
+      <template lwc:if={resultObj.message}>
+        <ul class="slds-list_dotted">
+          <li class="slds-size_9-of-12 error_class slds-cell-wrap">
+            {resultObj.message}
+          </li>
+        </ul>
+      </template>
+      <!-- Use to show multiple error Message -->
+      <template if:true={resultObj.errorsList}>
+        <template for:each={resultObj.errorsList} for:item="error">
+          <p key={error}>
+            <template lwc:if={error}>
+              <ul class="slds-list_dotted">
+                <li class="slds-size_9-of-12 error_class slds-cell-wrap">
+                  {error}
+                </li>
+              </ul>
+            </template>
+          </p>
+        </template>
+      </template>
+    </template>
+
+    <!--Show this when catch exception in LWC-->
+    <!-- <template lwc:if={haserror}>
+      <p>{error}</p>
+    </template> -->
+  </lightning-modal-body>
+
+  <lightning-modal-footer>
+    <lightning-button
+      variant="brand"
+      label="Close"
+      onclick={closeModal}
+    ></lightning-button>
+  </lightning-modal-footer>
+</template>

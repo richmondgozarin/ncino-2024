@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>cm_ApplicationUpdateTest</testClassName>
+    <testClassName>cm_AWSServiceTest</testClassName>
+    <testClassName>cm_BookingBatchSchedulerTest</testClassName>
+    <testClassName>cm_BookingBatchTest</testClassName>
+    <testClassName>CM_CreditActionRequestTest</testClassName>
+    <testClassName>cm_ERS_GetDecisionControllerTest</testClassName>
+    <testClassName>cm_ERS_GetDecisionHandlerTest</testClassName>
+    <testClassName>cm_ExceptionLogTest</testClassName>
+    <testClassName>cm_UtilitiesTest</testClassName>
+</ApexTestSuite>

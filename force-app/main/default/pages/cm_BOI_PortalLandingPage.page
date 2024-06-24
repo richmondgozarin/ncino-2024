@@ -1,0 +1,26 @@
+<apex:page >
+    <html>
+    <head>
+        <title>Dashboard Redirection Check</title>
+    </head>
+    <body>
+        <script>
+        	
+            // Get the current URL
+            let currentURL = window.location.href;
+
+            // Define the StartURL pattern or keyword
+            let StartURLKeyword = "StartURL";
+
+            // Check if the current URL contains the StartURL keyword
+            if (currentURL.includes(StartURLKeyword)) {
+                // Page has been redirected to the customer portal dashboard
+                alert("Redirected to the customer portal dashboard.");
+            } else {
+                // Page is not the dashboard
+                alert("Not on the dashboard.");
+            }
+        </script>
+    </body>
+    </html>
+</apex:page>

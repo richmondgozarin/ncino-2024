@@ -1,0 +1,24 @@
+<template>
+		<div class="container1">
+				<div class="containerHeaderSmallLine">
+				</div>		
+				<div class="containerHeader">
+				</div>	
+				<div class="container2">
+						<h1>Terms of use and Data Privacy</h1>
+						<div class="containerInner">
+								<div class="agree">
+										<lightning-input type="checkbox"
+																		 label="I confirm I have read and understood Bank of Ireland’s Terms of Use and Data Privacy Notice."
+																		 checked={agreed} onchange={handleAgreeChange}></lightning-input>
+								</div>
+								<div class="slds-grid slds-grid_vertical-align-end">
+										<div class="slds-col slds-text-align_right">
+												<!-- Button aligned to the right -->
+												<lightning-button variant="brand" label="Next" onclick={handleSubmit} class="btnNext"></lightning-button>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>		
+</template>

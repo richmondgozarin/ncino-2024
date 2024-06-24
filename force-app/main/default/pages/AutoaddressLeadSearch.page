@@ -1,0 +1,117 @@
+<apex:page standardController="Lead" id="addressForm" standardStylesheets="false" doctype="html-5.0" >
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://api.autoaddress.ie/2.0/control/js/jquery.autoaddress.min.js"></script>                  
+
+        <!-- CSS -->   
+        <link href="https://api.autoaddress.ie/2.0/control/css/autoaddress.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://integrations.autoaddress.ie/2.0/salesforce/salesforce.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    </head>
+    <body> 
+        <apex:form >
+			<div class="col-sm-7" style="left:-15px">
+                <label class="control-label" for="countrySelect" style="font-family: 'Arial', sans-serif; font-size: smaller">Search Address In:</label>
+                <select id="countrySelect" class="select-css" name="countrySelect" onchange="changeCountry()">
+                    <option value="ie">Ireland</option>              
+                    <option value="gb">United Kingdom</option>              
+                </select>
+            </div>      
+            
+        <div id="myControl">
+            <div class="autoaddress-control">
+                <input placeholder="Enter Full Address or Postcode" type="text" spellcheck="false" class="autoaddress-text-box" autocomplete="off" />
+                <button tabindex="-1" class="autoaddress-button">Search</button>
+                <div class="autoaddress-autocomplete" style="position: absolute; display: none; z-index: 9999;"></div>
+            </div>
+        </div>
+        <div class="form-horizontal" style="width: 1110px"> 
+            <div class="form-group form-group-sm">
+                    <label class="control-label" for="Organisation" id="orgLabel" style="font-family: 'Arial', sans-serif; font-size: smaller">Organisation:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="organisation" type="text" onBlur="manageStreet();" />
+                    </div>                
+                </div>
+                <div class="form-group form-group-sm">
+                    <label class="control-label" for="address1" style="font-family: 'Arial', sans-serif; font-size: smaller">Address Line 1:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="address1" type="text" onBlur="manageStreet();"/>
+                    </div>                
+                </div>
+                <div class="form-group form-group-sm" >
+                    <label class="control-label" for="address2" style="font-family: 'Arial', sans-serif; font-size: smaller">Address Line 2:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="address2" type="text" onBlur="manageStreet();"  />
+                    </div>
+                </div>
+                <div class="form-group form-group-sm" >
+                    <label class="control-label" for="address3" style="font-family: 'Arial', sans-serif; font-size: smaller">Address Line 3:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="address3" type="text" onBlur="manageStreet();"  />
+                    </div>
+                </div>
+                <div class="form-group form-group-sm" >
+                    <label class="control-label" for="address4" style="font-family: 'Arial', sans-serif; font-size: smaller">Town:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="address4" type="text"  onBlur="manageCity();"/>
+                    </div>
+                </div>
+                <div class="form-group form-group-sm" >
+                    <label class="control-label" for="address5" style="font-family: 'Arial', sans-serif; font-size: smaller">County:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="address5" type="text" onBlur="manageCounty();"  />
+                    </div>
+                </div>
+                <div class="form-group form-group-sm" >
+                    <label class="control-label" for="postcode" id="postcodeLabel" style="font-family: 'Arial', sans-serif; font-size: smaller">Postcode:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="postcode" type="text"  onBlur="managePostalCode();" />
+                    </div>
+                </div>
+            <div class="form-group form-group-sm" >
+                
+                 
+                <label class="col-sm-3 control-label" for="postcode" id="postcodeLabel" >&nbsp;</label>
+                <div class="col-sm-9"  id="buttonSection">                    
+                    <apex:inputHidden id="street" value="{!Lead.Street}"/> 
+                    <apex:inputHidden id="city" value="{!Lead.City}"/>
+                    <apex:inputHidden id="county" value="{!Lead.State}"/>
+                    <apex:inputHidden id="postalcode" value="{!Lead.Postalcode}"/>
+                    <apex:inputHidden id="country" value="{!Lead.Country}"/>
+                    <apex:commandButton styleClass="submitButton" action="{!save}" value="Save"/>
+                </div>
+            </div>                      
+        </div>    
+                                                            
+        <script>
+            var licenceKey = "{!$Label.AutoaddressKey}";
+            var countryValue = "{!$Label.AutoaddressDefaultCountry}";
+            var includeOrgName = "{!$Label.AutoaddressIncludeBusinessName}";
+            var addressProfile = "{!$Label.AutoaddressAddressProfile}";
+            
+            var billingStreet = document.getElementById('{!$Component.street}');
+            var billingCity = document.getElementById('{!$Component.city}'); 
+            var billingCounty = document.getElementById('{!$Component.county}');
+            var billingPostcode = document.getElementById('{!$Component.postalcode}');
+            var billingCountry = document.getElementById('{!$Component.country}');
+            
+            var selector = document.getElementById('countrySelect');
+            selector.value = countryValue
+            if("{!$Label.AutoaddressCountrySelector}" === "false") {
+                selector.style.display = "none";
+            }
+            
+            if(includeOrgName === "false") {
+                document.getElementById('organisation').style.display = "none";
+                document.getElementById('orgLabel').style.display = "none";
+            }
+            
+            function changeCountry() {                    
+                countryValue = selector.value;
+                $('#myControl').AutoAddress('setCountry',countryValue);
+            }                                                
+      	</script>
+      	<script src="https://integrations.autoaddress.ie/2.0/salesforce/salesforce.min.js"></script>                        
+        </apex:form>
+    </body>
+</apex:page>

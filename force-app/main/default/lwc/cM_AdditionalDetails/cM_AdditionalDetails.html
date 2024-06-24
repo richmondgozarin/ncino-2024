@@ -1,0 +1,133 @@
+<template>
+    <div class="parentContainer">
+	<div class='BOI_Logo' style="text-align:center; padding:.5em">
+		<img src={BOI_Logo} alt="Bank Of Ireland" style="width:110px; height:auto;">
+			<p class="placeholderTxt">
+					<b>"Placeholder Text"</b>
+			</p>
+	</div>
+	<div class="slds-box slds-theme_default" style="margin-top:-85px!important;">
+	<div if:true={showSpinner}>
+            <lightning-spinner
+                alternative-text="Loading..." variant="brand" class="slds-is-fixed">
+            </lightning-spinner>
+    </div>
+	<lightning-record-edit-form record-id={recId} object-api-name="Account" layout-type="Full" columns="2" density="Compact" onsuccess={handleSuccess}>
+
+			<lightning-messages></lightning-messages>
+
+			<div class="slds-grid slds-gutters">
+
+				<div class="slds-col">
+					<label for="relName">Relationship Name</label>
+					<lightning-input-field id="relName" field-name="Relationship_Name_person__c" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+					<br>
+					<label for="PPSN">PPSN</label>
+					<lightning-input-field id="PPSN" field-name="LLC_BI__SS_PE__pc" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+					<br>
+					<label for="personEmail">Email</label>
+					<lightning-input-field id="personEmail" class="personEmail" field-name="PersonEmail" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+					<br>
+					<label for="personBirthDate">Date of Birth</label>
+					<lightning-input-field id="personBirthDate" class="personBirthDate" field-name="PersonBirthdate" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+					<br>
+					<label for="personMobileNo">Mobile</label>
+					<lightning-input-field id="personMobileNo" class="personMobileNo" field-name="PersonMobilePhone" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+					<br>
+					<label for="resAddress">Residential Address</label>
+					<lightning-input-field id="resAddress" class="residentialAddress" field-name="cm_Residential_Address__pc" variant="label-hidden" disabled="true">
+					</lightning-input-field>
+				</div>
+			
+				<div class="slds-col">
+					<label for="ICPD">Is there any incorrect personal data on the left hand side?</label>
+					<lightning-input-field style="margin-bottom: 11px; display: block;" id="ICPD" class="incorrectPerDetails" field-name="cm_Incorrect_Personal_Details__pc" variant="label-hidden" onchange={handleBooleanField} value={isIncorrectPD}>
+			
+					</lightning-input-field>
+					<template if:true={isIncorrectPD}>
+						<lightning-input-field field-name="cm_Whatpersonaldetailsincorrect__pc" onchange={handleChange}>
+						</lightning-input-field>
+					</template>
+					
+					<label for="livingArrangements">What are your living arrangements?</label>
+					<lightning-input-field id="livingArrangements" field-name="cm_Living_Arrangements__pc" variant="label-hidden" onchange={handleTypeChange} value={selectedType}>
+					</lightning-input-field>
+					<br>
+					<template if:true={isMonthlyRentVisible}>
+						<label for="monthlyRent">What is your monthly rent?</label>
+						<lightning-input-field id="monthlyRent" field-name="cm_monthlyRentExpense__pc" variant="label-hidden" onchange={handleTypeChange} value={monthlyRentExpenses}>
+						</lightning-input-field>
+					</template>
+					<br>
+					<label for="boiSavings">How much savings do you have?</label>
+					<lightning-input-field id="boiSavings" field-name="cm_boiOnlySavingsValue__pc" variant="label-hidden" onchange={handleChange} value={boiOnlySavings}>
+					</lightning-input-field>
+	
+					<lightning-input-field id="addInfoFlag" field-name="cm_AdditionalInfoReqd__c" variant="label-hidden" value={setFlagtoFalse} class="slds-hide" disabled=true></lightning-input-field>
+				</div>
+			</div>
+			<br>
+			<div class="absoluteBtn">
+				<lightning-button type="submit" class="slds-m-top_small my-brand" variant="brand" label="Submit" disabled={isBtnFreeze} onclick={updateFlag}></lightning-button>
+			</div>
+			<br>
+		</lightning-record-edit-form>
+		
+<lightning-card title="Please fill out below questions for each relevant application">
+		<div if:true={showTableSpinner}>
+            <lightning-spinner
+                alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+    </div>
+    <template if:true={data}>
+        <c-cm-_custom-types-global
+			class="saveTbl"
+            key-field="Id"
+            data={data} 
+            columns={columns} 
+            onvalueselect={handleSelection}
+            draft-values={draftValues} 
+            oncellchange={handleCellChange}
+            onsave={handleSave}
+            oncancel={handleCancel}
+            hide-checkbox-column>
+        </c-cm-_custom-types-global>
+    </template>
+</lightning-card>
+		
+        <!-- Custom Toast Message -->
+
+ <template if:true={showToast}>
+    
+    <div class="slds-notify_container slds-is-relative toastMessage">
+        <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
+          <span class="slds-assistive-text">success</span>
+          <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top" title="Description of icon when needed">
+            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
+            </svg>
+          </span>
+          <div class="slds-notify__content">
+            <h2 class="slds-text-heading_medium">Success!</h2>
+            <h1>{successMsg}</h1>
+          </div>
+          <div class="slds-notify__close">
+            <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close">
+              <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+              </svg>
+              <span class="slds-assistive-text">Close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+	</div>
+</div>
+</template>

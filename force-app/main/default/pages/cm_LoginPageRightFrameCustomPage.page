@@ -1,0 +1,9 @@
+<apex:page showHeader="false" cache="false">
+    <apex:stylesheet value="{!$Resource.LoginPageRightFrameCSS}" />
+
+    <div class="center">
+        <p>Welcome to the nCino Colleague Portal  </p>
+        <apex:image url="{!URLFOR($Resource.LoginPageRightFrameBG)}" styleClass="img"/>
+    </div>
+
+</apex:page>

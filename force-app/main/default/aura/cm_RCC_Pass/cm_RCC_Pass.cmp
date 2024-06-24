@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <div class="slds-align_absolute-center">
+        <img src="{!$Resource.BOI_Image_RCC_Pass}"/>
+    </div>
+</aura:component>

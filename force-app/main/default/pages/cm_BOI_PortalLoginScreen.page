@@ -1,0 +1,215 @@
+<apex:page applyBodyTag="false"
+           applyHtmlTag="false"
+           docType="html-5.0"
+           controller="cm_PortalLoginScreenController"
+           showHeader="false"
+           sidebar="false"
+           standardStylesheets="false"
+           lightningStyleSheets="true"
+           action="{!windowsloadFinishLoginFlowHome}">
+    <apex:slds />  
+    <script src="/soap/ajax/58.0/connection.js" type="text/javascript"></script>    
+    <script src="/soap/ajax/58.0/apex.js" 
+    type="text/javascript"></script>
+    
+    <!-- Include the JavaScript from the static resource -->
+    
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <title>{!$Label.BOI_CP_Title_Page}</title>
+            <meta charset="utf-8" />
+            <meta http-equiv="x-ua-compatible" content="ie=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
+            <!-- Import the Design System style sheet -->
+            <!-- Include the Salesforce AJAX Toolkit library -->
+            <!-- Import the Design System style sheet -->
+        </head>
+        <body class="portal-body">	             
+            <div class="slds-scope container">
+                <div class="header">
+                    <img class="logo" src="{!$Label.BOI_CP_Head_Nav_Logo}" alt="Sample Logo" />
+                </div> 
+                <div class="centered-card">
+                    <div class="slds-card">
+                        <header class="slds-card__header">
+                            <h1 class="slds-text-heading_medium">{!$Label.BOI_CP_TCs_Content_Title}</h1>
+                        </header>
+                        
+                        <div class="slds-card__body slds-m-top_medium">
+                            <div class="slds-grid slds-grid_vertical">
+                                <div class="slds-col">
+                                    <p>To use our Business Borrowing Hub you will need to agree to our <a href="{!$Label.BOI_CP_Terms_of_Use_Hyperlink}" target="_blank" style="font-weight: bold;">Terms of Use</a>. You will also need to confirm you understand that your personal information, and information you provide about others, will be handled in line with Bank of Ireland's <a href="{!$Label.BOI_CP_DataPrivacyPolicy_Hyperlink}" target="_blank" style="font-weight: bold;">Data Privacy Notice</a>.</p>
+                                    <br></br>
+                                    <p>By tapping 'Agree and Continue', you agree to the Terms of Use and understand that your personal information, and information you provide about others, will be handed in line with Bank of Ireland's Data Privacy Notice. Before you give us personal information about someone else, it's important to ensure that you've discussed this application with them and obtained their permission.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <apex:form id="frmTermsCondition">  
+                            <div class="slds-card__footer">
+                                <apex:commandButton id="bntAgreeContinue" action="{!FinishLoginFlowHome}" value="Agree and continue" styleClass="slds-button slds-button_brand slds-button_size_large slds-button_icon slds-button_icon-border-filled" />
+                            </div>
+                    	</apex:form>
+                    </div>
+                </div>     
+            </div>
+            
+        </body>
+    </html>
+    
+    <script type="text/javascript">
+    
+    </script>     
+    
+    <style>
+        .container {
+        width: 100%; /* Set width to 100% to fit the screen */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Include padding in width calculation */
+        }
+            
+        .header {
+            background-color: #DCDCDC;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column; /* Display content in a column */
+            align-items: center;
+            border-top: 5px solid darkblue; 
+            height: 60px; /* Set a default height for the header */
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+        margin-bottom: 1rem; /* Add margin at the bottom of the logo */
+        position: relative;
+        top: -5px;
+        max-width: 100px !important;
+        }
+        
+        .portal-body {
+        background: #c7c7c7;
+        margin: 0;
+        }
+                      
+        .centered-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 60px - 80px); /* Adjust min-height to center content vertically, considering header and padding */
+        }
+        
+        .slds-card {
+            padding: 1rem;
+            width: 100%; /* Set card width to 100% */
+            margin: 100px 225px 458px 225px;
+            padding-top: 56px !important;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* height: 800px; */ /* Remove fixed height */
+        }
+        
+        h1 {
+            font-weight: bold !important;
+            color: black;
+            margin-left: 55px !important;
+        }
+        
+		.slds-card__body.slds-m-top_medium {
+        	margin-left: 55px !important;
+        	padding: 1rem;
+        
+        }
+            
+        .slds-card__footer {
+            display: flex;
+            justify-content: flex-start; /* Align items to the start (left) */
+        	margin-left: 55px !important;
+            padding: 1rem; /* Add padding as needed */
+        	padding-bottom: 40px !important;
+        }
+    
+        .slds-card__footer button {
+            margin-right: 1rem; /* Add space between button and card edge */
+        	
+        } 
+        
+        .slds-button {
+            padding: 12px 32px !important; /* Adjust padding for a larger button */
+            height: 50px !important;
+            width: 180px !important;
+            background: #0000FF !important;
+            color: white !important;
+            border-radius: unset !important;
+            align-items: center;       
+        }
+        
+        .slds-button:hover {
+            background: #03039e !important;
+        }
+  
+         @media screen and (max-width: 768px) {
+            /* Adjust styles for screens with a maximum width of 768px (typical tablet width) */
+            .header {
+                height: 60px; /* Allow the header to adjust its height dynamically on smaller screens */
+            }
+    
+            .logo {
+                max-width: 13% !important; /* Adjust max-width for smaller screens */
+            }
+        
+            h1 {
+                font-size: 16px !important;
+                margin-left: -19px !important;
+            }
+        
+            .slds-card {
+                margin: 5%;
+                padding: 5% !important;
+                height: auto;
+            }
+        
+            .slds-card__body {
+           		margin: 0 !important;
+            }
+                
+            /* Add or adjust other styles as needed for smaller screens */
+        }       
+        
+        @media screen and (max-width: 480px) {
+            /* Add or adjust styles for mobile view here */
+    
+            .slds-card {
+                margin: 5%; /* Adjust margin for smaller screens */
+                padding: 5% !important; /* Adjust padding for smaller screens */
+                height: auto; /* Adjust height for smaller screens */
+            }
+        
+            .header {
+                height: 40px /* Allow the header to adjust its height dynamically on smaller screens */
+            }
+    
+            .logo {
+                max-width: 13% !important; /* Adjust max-width for smaller screens */
+            }
+
+
+            .slds-card {
+                margin: 5%;
+                padding: 5% !important;
+                height: auto;
+            }
+        
+            h1 {
+                font-size: 14px !important;
+                margin-left: -19px !important;
+            }
+        
+        }
+
+    </style> 
+    
+</apex:page>

@@ -1,0 +1,73 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+            Sample Callout
+        </h3>
+        <div slot="footer">
+                
+        </div>
+         <c-boi-Modal></c-boi-Modal>
+
+
+    </lightning-card>
+
+    <template if:true={visible}>
+        <div style="position:absolute;top:15rem;left:18rem;right:1rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_default slds-box slds-box_small" style="border-color:green;" role="success">
+                <div class="slds-align_absolute-center">
+                    <h2 class="slds-text-heading_large" style="color:green;">API respond Successfully!</h2>
+                    <lightning-icon icon-name="utility:success" alternative-text="success" variant="Success" size="small" ></lightning-icon>
+                </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={isError}>
+        <div style="position:absolute;top:15rem;left:18rem;right:1rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_default slds-box slds-box_small" style="border-color:red;" role="error">
+                <div class="slds-align_absolute-center">
+                    <h2 class="slds-text-heading_large" style="color:red;">No match found.</h2>
+                    <lightning-icon icon-name="utility:error" alternative-text="error" variant="error" size="small" ></lightning-icon>
+                </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={showModal}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- Modal/Popup Box LWC header here -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">COMPANY DETAILS</h2>
+            </header>
+            <!-- Modal/Popup Box LWC body starts here -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p style="height:3rem;width: 30rem; font-size: 150%;">Company Name   : {companyName} </p>
+            <p style="height:3rem;width: 30rem; font-size: 150%;">Company Number : {companyNumber} </p>
+            <p style="height:3rem;width: 30rem; font-size: 150%;">Company Status : {status} </p>
+            <p style="height:3rem;width: 30rem; font-size: 150%;">Company Address: {address} </p>
+            
+        </div>
+        <!-- Modal/Popup Box LWC footer starts here -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={closeModal} title="Close">Ok</button>
+                <!--<button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>-->
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+</template>

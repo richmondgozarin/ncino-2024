@@ -1,0 +1,16 @@
+.spinnerCenter{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    left: 400px;
+}
+.contentCenter{
+    align-items: center;
+}
+
+.error_class{
+    padding:10px 2px 10px 10px;
+    line-height: 1.5;
+    color: crimson;
+}

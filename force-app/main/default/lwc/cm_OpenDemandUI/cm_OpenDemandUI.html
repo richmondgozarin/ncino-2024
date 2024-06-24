@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-size_1-of-1">
+            <!--TABLE FOR THE RECORDS-->
+            <div style="height: 300px;">
+                <lightning-datatable
+                        key-field="id"
+                        data={data}
+                        show-row-number-column
+                        row-number-offset={rowOffset}
+                        hide-checkbox-column
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,36 @@
+.errorClass{
+    color: red;
+    border: 1px solid #ff000029;
+    border-radius: 5px;
+    padding: .2rem;
+    box-shadow: 0px 8px 4px -10px #333;
+    transition: ease-in;
+}
+.progress_bar_parent{
+    position: relative;
+}
+.progress_bar_parent .progress_bar_percentage{
+    position: absolute;
+    z-index: 1;
+    color: #000;
+    font-size: 11px;
+    top: -15px;
+}
+.left_0{
+    left:0;
+}
+.left_25{
+    left:25%;
+}
+.left_50{
+    left:0;
+    right: 0;
+    text-align: center;
+}
+.left_75{
+    left:70%;
+}
+.left_100{
+    left:auto!important;
+    right:0;
+}

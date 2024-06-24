@@ -1,0 +1,3 @@
+<apex:page standardController="LLC_BI__Loan__c">
+<apex:iframe src="/apex/nFORMS__HtmlFormGenerator?contextid={!LLC_BI__Loan__c.Id}&parentID=a1s0C000000mxQNQAY" scrolling="true" id="theIframe"/>
+</apex:page>

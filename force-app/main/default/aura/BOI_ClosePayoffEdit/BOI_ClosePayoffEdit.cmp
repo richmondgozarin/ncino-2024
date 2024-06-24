@@ -1,0 +1,22 @@
+<!-- Overrides the standard loan Edit button: Used in ClosePayoff related list -->
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,force:hasSObjectName,lightning:actionOverride" >
+    <lightning:navigation aura:id="navService"/>
+    
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="loanRecord" type="Object"/>
+    
+    <force:recordData aura:id="recordLoader"
+                      fields="Name, cm_Payoff_Loan__c"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.loanRecord}"
+                      />
+    
+    <p class="align-center">
+        <lightning:formattedText class="red-text"
+                                 value="Please use the Update Payoff Loans button to edit the loans which are linked to be closed and paid off." />
+    </p>
+    <div class="align-center">
+        <lightning:button label="Back" title="Back" variant="Brand" onclick="{! c.handleClick }" />
+    </div>
+    
+</aura:component>

@@ -1,0 +1,144 @@
+{
+  "accountOrigination": {
+    "general": {
+      "ndiCalculationIndicator": "N",
+      "repaymentMethod": "3",
+      "applicationRequestDate": "2021-10-08",
+      "originationSubmissionChannelCode": "B",
+      "relationshipManagerCode": "B",
+      "jointAccountIndicator": "N"
+    },
+    "identifier": {
+      "applicationNumber": 112203824,
+      "applicationBusinessSourceCode": "2",
+      "sellingBranchSortCode": 909521
+    },
+    "application": {
+      "debitInterestRateCode": "1B",
+      "monthlyRepaymentAmount": 0,
+      "loanTypeIndicator": "",
+      "collateralCode": 0,
+      "stockingLoanIndicator": "N",
+      "schoolChurchCharitiesClubsIndicator": "",
+      "applicationType": "OPYR",
+      "accountTypeCode": "O",
+      "accountSubTypeCode": "0",
+      "productTypeCode": "O",
+      "numberOfApplicants": 4,
+      "bridgeLoanIndicator": "0",
+      "loanTopUpIndicator": "Y",
+      "totalNewMonthlyDebtRepaymentAmount": 0,
+      "totalMonthlyDebtRepaymentAmount": 0,
+      "totalApplicantNetDisposableIncome": 184600,
+      "totalSavingsValue": 184600
+    },
+    "credit": {
+      "purposeOfLoan": 24,
+      "subPurposeOfLoan": 0,
+      "loanTermInMonths": 12
+    },
+    "monetaryAmount": {
+      "totalMonthlyOverheadsExpense": 99999,
+      "netMonthlyExpense": 0,
+      "inflightLoanApplicationAmount": 1000,
+      "requestedLoanAmount": 1000,
+      "amountOfAllNewCreditApplciationsInProgress": 0,
+      "monthlyRentExpense": 99999,
+      "repaymentAmount": 0,
+      "repaymentFrequency": "0",
+      "issuedCapital": 0
+    },
+    "primaryApplicant": {
+      "totalValueOfMonthlyOutgoingsPlusMortgage": 0,
+      "collegeCourseCode": "",
+      "currentEmploymentStartDate": "2018-05-15",
+      "monthlyMortgageRepayment": 0,
+      "boiOnlySavingsValue": 184600,
+      "customerDetails": {
+        "general": {
+          "salaryMandatedIndicator": "Y"
+        },
+        "identifier": {
+          "originalSourceSystem": "BKK",
+          "originalSourceSystemIdentifier": 1064617
+        },
+        "contact": {
+          "nonRoiResidentIndicator": "N",
+          "currentAddressStartDate": "2015-05-15",
+          "homePhoneIndicator": "Y"
+        },
+        "relationship": {
+          "existingBoiCustomerIndicator": "Y",
+          "newCustomerIndicator": "N",
+          "vipEntityIndicator": "N"
+        },
+        "risk": {
+          "creditRating7Internal": "3N"
+        },
+        "segmentation": {
+          "boiMarketClassificationCode": "184A",
+          "customerNatureCode": "P"
+        }
+      },
+      "personDetails": {
+        "general": {
+          "dateOfBirth": "1980-10-15",
+          "maritalStatus": "1",
+          "mannerOfHabitation": "C",
+          "staffIndicator": "N",
+          "yearsToComplete3rdLevel": 0,
+          "careerEmploymentStatusCode": "Y"
+        },
+        "employment": {
+          "occupationTypeCode": "3050"
+        },
+        "financials": {
+          "numberOfDependents": 0,
+          "salaryFrequency": "1",
+          "salary": 99999,
+          "netMonthlyIncome": 1686
+        }
+      },
+      "applicantAccountDetails": {
+        "account": {
+          "general": {
+            "cardIndicator": "N"
+          },
+          "identifier": {
+            "accountNumber": 82990019,
+            "sortCode": 904309
+          },
+          "segmentation": {
+            "cBoIAccountMarketClassCode": ""
+          },
+          "servicing": {
+            "individualPermissionAmount": 0
+          }
+        },
+        "creditCardAccount": {
+          "monetaryAmount": {
+            "creditUsedAmount": 0
+          }
+        }
+      }
+    },
+    "additionalApplicant": {
+      "personDetails": {
+        "general": {
+          "dateOfBirth": "1984-12-24"
+        },
+        "employment": {
+          "occupationTypeCode": ""
+        }
+      }
+    }
+  },
+  "externalAssessment": {
+    "externalBureauResponse": {
+      "coarseGradingClient1": 50000.0001,
+      "coarseGradingClient2": 50000.0001,
+      "coarseGradingClient3": 50000.0001,
+      "coarseGradingClient4": 50000.0001
+    }
+  }
+}

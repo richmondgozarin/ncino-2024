@@ -1,0 +1,42 @@
+.my-brand{
+    --sds-c-button-brand-color-background: blue;
+	--slds-c-button-radius-border: 0;
+}
+.saveTbl{
+	--sds-c-button-brand-color-background: blue;
+	--slds-c-button-radius-border: 0;
+}
+.slds-scope{
+    height:100%;
+    margin:0 !important;
+}
+.BOI_Logo {
+		position: relative;
+    top: -95px;
+}
+.toastMessage{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.absoluteBtn {
+		text-align: center;
+		position: absolute;
+		bottom: 15px;
+		left: 0;
+		right: 0;
+}
+.absoluteBtn button{
+		background:blue;
+		border-radius:0;
+}
+.parentContainer{
+		position:relative;
+		padding-bottom: 5em;
+}
+.placeholderTxt{
+		margin: 10px 0;
+		font-style: italic;
+		font-size: 14px;
+}

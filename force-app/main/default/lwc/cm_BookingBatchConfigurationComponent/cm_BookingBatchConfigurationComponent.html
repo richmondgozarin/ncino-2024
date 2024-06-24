@@ -1,0 +1,102 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+        <!-- BOI Holiday Calendar Section-->
+            <lightning-card title={customLabel.holidayPanelHeaderTitle} icon-name="standard:event">
+        
+                <div class="slds-m-around_medium">
+                    <div class="slds-m-vertical_medium">
+                        <template lwc:if={_wiredHolidays}>
+                            <template for:each={_wiredHolidays} for:item="holidayDetails">
+                                <p key={holidayDetails.Id}>Name: {holidayDetails.Name}</p>
+                                <p key={holidayDetails.Id}>Description: {holidayDetails.Description}</p>
+                                <p key={holidayDetails.Id}>Date: {holidayDetails.ActivityDate}</p>
+                            </template>
+                        </template>
+                        <template lwc:else>
+                            <p><em>{customLabel.holidayPanelGenericText}</em></p>
+                        </template>
+                        <br>
+                        <a href={holidayURL}>{customLabel.holidayPanelHyperLinkLabel}</a>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+
+            <lightning-card title={customLabel.BKKPanelHeaderTitle}  class="slds-text-align_left">
+
+            <!-- Daily Schedule Job Settings -->
+
+                    <lightning-card title={customLabel.standardSchedulerTitle} icon-name="standard:business_hours"></lightning-card>
+                    <div class="slds-m-around_medium" style="margin-top:0;">
+                        <div class="slds-size_1-of-1 slds-var-p-bottom_x-small slds-var-p-top_x-small slds-border_bottom" style="padding-top:0;">
+                            <p><strong style="color:red;">Note:</strong> {customLabel.bkkDailyJobSettingsLabel}</p>
+                        </div>
+                        <br>
+                        <p><strong>{customLabel.standardSchedulerIntervalText}</strong></p>
+                            <br>
+                            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+                                <template for:each={label} for:item="cronList">
+                                    <div key={cronList.key} style="display:flex;">
+                                    <!-- <lightning-input key={cronList.key} checkbox="checked" onchange={handleChange} value={cronList.values} type="checkbox" label={cronList.values}></lightning-input> -->
+                                    <p key={cronList.key}>{cronList.values}</p>&nbsp;&nbsp;&nbsp;
+                                    <lightning-icon key={cronList.key} data-key={cronList.key} onclick={editJob} icon-name="utility:edit" alternative-text="Edit Schedule" title="Edit Schedule" size="xx-small" style="cursor: pointer;"> </lightning-icon>
+                                    </div>
+                                </template>
+                            </div>
+                            
+                            <br>
+                        <template if:false={_wiredScheduler}>
+                            <lightning-button label={customLabel.standardSchedulerBtnLabel} onclick={FrequencyScheduler} name={customLabel.standardSchedulerBtnLabel}></lightning-button>
+                        </template>
+												<template if:true={_wiredScheduler}>
+                            <p style="color:green;">
+																<em>{customLabel.standardSchedQueuedLabel}</em>
+														</p>
+                        </template>
+                    </div>
+                    <div class="slds-size_1-of-1 slds-var-p-bottom_x-small slds-var-p-top_x-small slds-border_bottom"></div>
+                    <br>
+                    <!-- On-Demand Batch Job Settings -->
+                    <lightning-card title={customLabel.onDemandBatchJobTitle} icon-name="standard:work_order_item">
+                    </lightning-card>
+                        <div class="slds-m-around_medium" style="margin-top:0;">
+                            <div style="padding-top:0;" class="slds-size_1-of-1 slds-var-p-bottom_x-small slds-var-p-top_x-small slds-border_bottom">
+                                <p><strong style="color:red">Note:</strong> {customLabel.bkkOnDemandSettingsLabel}</p>
+                            </div>
+                            <div class="slds-m-vertical_medium">
+                                <div style="margin-bottom:10px">
+                                    <label class="slds-form-element__label" for="input-282"><abbr class="slds-required" title="required">*</abbr>{customLabel.startDateInputLabel}</label>
+                                    <input type="date" class="startDate slds-input" value={inputStartDate} max={maxDate} onchange={handleChange} placeholder="input date here.." disabled={disabledDateFields} required>
+                                </div>
+                                <div>
+                                    <label class="slds-form-element__label" for="input-282"><abbr class="slds-required" title="required">*</abbr>{customLabel.endDateInputLabel} </label>
+                                    <input type="date" class="endDate slds-input" value={inputEndDate} max={maxDate} onchange={handleChange} placeholder="input date here.." disabled={disabledDateFields} required>
+                                </div>
+                            </div>
+                            <template if:true={hasError}>
+                                <p class="errorClass">{errorMessage}</p>
+                            </template>
+                            <div class="slds-m-vertical_medium">
+                                <lightning-button label={customLabel.onDemandBtnLabel} title="Run" onclick={getInputValue} class="slds-m-left_x-small" disabled={disableRunBtn}></lightning-button>
+                            </div>
+                        </div>
+                        <div class="slds-m-around_medium">
+                            <!-- Progress Bar --> 
+                            <template if:true={isLoading}>
+                            <div class="progress_bar_parent">
+                                <p id="progressbar" class="progress_bar_percentage">{batchStatus}</p>
+                                <lightning-progress-bar class="batch_progress_bar" value={progressBar} size="large" variant="circular" label={computedLabel}></lightning-progress-bar>
+                            </div>
+                            </template>
+                            <br>
+                            <!-- Link to Record Button -->
+                            <template if:true={csvFilesReady}>
+                                <lightning-button label="Check CSV File Records" title="Check CSV File Records" onclick={redirectToRecord} class="slds-m-left_x-small"></lightning-button>
+                            </template>
+                        </div>
+            </lightning-card>
+        </div>
+    </div>
+</template>

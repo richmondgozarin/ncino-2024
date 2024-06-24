@@ -1,0 +1,83 @@
+<template>
+    <div class="slds-grid slds-wrap">
+      <div class="slds-size_1-of-1">
+  
+        <lightning-card title="Frequency" icon-name="action:new_task">
+        
+            <div class="slds-grid slds-wrap slds-var-p-right_medium slds-var-p-left_medium slds-var-p-bottom_medium">
+                  
+                  <template if:true={loading}>
+                      <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </template>
+  
+                      <div class="slds-size_1-of-1 slds-var-p-bottom_x-small slds-var-p-top_x-small slds-border_bottom">
+                        <h2 class="slds-text-heading_small slds-var-p-bottom_x-small">Schedule Booking Batch Job</h2>
+                        <lightning-input class="slds-var-p-bottom_x-small" type="time" name="time" label="When would you like to schedule the sync" required
+                          onchange={handleTimeChange}></lightning-input>
+  
+                          <fieldset class="slds-form-element slds-is-required">
+                            <legend class="slds-form-element__legend slds-form-element__label">
+                              <abbr class="slds-required" title="required">*</abbr> Select Days:</legend>
+                            <div class="slds-form-element__control">
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-89" value="checkbox-unique-id-89" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-89">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Sunday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-90" value="checkbox-unique-id-90" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-90">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Monday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-91" value="checkbox-unique-id-91" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-91">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Tuesday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-92" value="checkbox-unique-id-92" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-92">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Wednesday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-93" value="checkbox-unique-id-93" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-93">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Thursday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-94" value="checkbox-unique-id-94" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-94">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Friday</span>
+                                </label>
+                              </div>
+                              <div class="slds-checkbox">
+                                <input type="checkbox" name="options" id="checkbox-unique-id-95" value="checkbox-unique-id-95" />
+                                <label class="slds-checkbox__label" for="checkbox-unique-id-95">
+                                  <span class="slds-checkbox_faux"></span>
+                                  <span class="slds-form-element__label">Saturday</span>
+                                </label>
+                              </div>
+                              
+                            </div>
+                          </fieldset>
+                        
+                        <br>
+                        <lightning-button label="Save" name="Save" onclick={scheduleApexJob}></lightning-button>
+                      </div>
+            </div>
+        </lightning-card>
+  
+      </div>
+    </div>
+  </template>
